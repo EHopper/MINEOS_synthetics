@@ -69,6 +69,7 @@ end
 
 %% setup Parameters for kernals
 param.frechetpath = [path2runMINEOS,'/MODE/FRECHET/',param.CARDID,'/'];
+param.frechet = [path2runMINEOS,'/MODE/FRECHET/'];
 
 if ~exist(param.frechetpath) 
     mkdir(param.frechetpath)
