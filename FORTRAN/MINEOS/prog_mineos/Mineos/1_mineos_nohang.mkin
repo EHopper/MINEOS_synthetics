@@ -8,20 +8,20 @@ SUBS= baylis.f bfs.f dermf.f derms.f detqn_nohang.f drspln.f dsplin.f eifout.f e
       sfbdry.f sfbm.f sprop.f sprpmn.f spsm.f startl.f steps.f svd.f tprop.f\
       tps.f trknt.f whead.f wtable.f zknt.f
 OBJS= mineos.o $(SUBS:.f=.o)
+FFLAGS = -mcmodel=medium
 
 .f.o:
 	$(FC) $(FFLAGS) -c $*.f
 
 #----------------------------------------------------------------------------------
 
-$(PROG): $(OBJS) 
+$(PROG): $(OBJS)
 	$(FC) $(FFLAGS) $(LFLAGS) -o $(MYBIN)/$@ $(OBJS)
 
 # check object files for dependency on .h files
 $(OBJS): parameter.h
 	$(FC) $(FFLAGS) -c $*.f
-	
-	
-clean: 
-	rm -rf *.o
 
+
+clean:
+	rm -rf *.o

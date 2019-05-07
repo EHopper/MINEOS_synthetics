@@ -1,6 +1,6 @@
-MYBIN = /Users/russell/Lamont/PROJ_LoveOvertones/FORTRAN/bin
+MYBIN = /home/chiv/Documents/SurfaceWaves/MINEOS_synthetics/FORTRAN/bin
 FC = gfortran
-MYLIB= /Users/russell/Lamont/PROJ_LoveOvertones/FORTRAN/libgfortran
+MYLIB= /home/chiv/Documents/SurfaceWaves/MINEOS_synthetics/FORTRAN/libgfortran
 #
 PROG= idagrn6_sac
 SUBS= spheroidal5.f toroidal5.f spheroidal_exc5.f toroidal_exc5.f \
@@ -9,13 +9,14 @@ SUBS= spheroidal5.f toroidal5.f spheroidal_exc5.f toroidal_exc5.f \
       dwdd_c51.f dwdd_db.f
 
 OBJS= $(PROG).o $(SUBS:.f=.o)
+FFLAGS = -mcmodel=medium
 
 .f.o:
 	$(FC) $(FFLAGS) -c $*.f
 
 #----------------------------------------------------------------------------------
 
-$(PROG): $(OBJS) 
+$(PROG): $(OBJS)
 	$(FC) $(FFLAGS) $(LFLAGS) -o $(MYBIN)/$@ $(OBJS) \
 	$(MYLIB)/libcip.a \
 	/opt/local/sac/lib/sacio.a \

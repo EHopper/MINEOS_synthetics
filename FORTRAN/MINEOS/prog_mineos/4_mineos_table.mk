@@ -1,6 +1,6 @@
-MYBIN = /Users/russell/Lamont/PROJ_LoveOvertones/FORTRAN/bin
+MYBIN = /home/chiv/Documents/SurfaceWaves/MINEOS_synthetics/FORTRAN/bin
 FC = gfortran
-FFLAGS=-ffixed-line-length-none
+FFLAGS=-ffixed-line-length-none -mcmodel=medium
 #
 PROG= mineos_table
 SUBS= kblnk.f
@@ -11,7 +11,7 @@ OBJS= $(PROG).o $(SUBS:.f=.o)
 
 #----------------------------------------------------------------------------------
 
-$(PROG): $(OBJS) 
+$(PROG): $(OBJS)
 	$(FC) $(FFLAGS) -o $(MYBIN)/$@ $(OBJS)
 
 # check object files for dependency on .h files

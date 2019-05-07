@@ -1,5 +1,5 @@
 # FFLAGS= -fast -O3
-FFLAGS= $(MYFFLAGS)
+FFLAGS= $(MYFFLAGS) -mcmodel=medium
 LIBNAM= ../libutil.a
 #
 .f.a:
@@ -9,7 +9,7 @@ LIBNAM= ../libutil.a
 #
 # objects for utility library
 #
-# 	
+#
 $(LIBNAM): \
 	$(LIBNAM)(angles.o) \
 	$(LIBNAM)(azimth.o) \

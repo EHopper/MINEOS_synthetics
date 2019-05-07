@@ -4,7 +4,7 @@
 # jeff's flags
 #FFLAGS= +O3 +es +U77 +E3
 #
-FFLAGS= $(MYFFLAGS)
+FFLAGS= $(MYFFLAGS) -mcmodel=medium
 #
 # Library path name
 #

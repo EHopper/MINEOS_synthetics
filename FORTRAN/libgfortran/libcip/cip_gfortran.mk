@@ -1,7 +1,7 @@
 #
 #  Compiler options.
 #
-FFLAGS= $(MYFFLAGS) 
+FFLAGS= $(MYFFLAGS) -mcmodel=medium
 LIBNAM= ../libcip.a
 #
 #  Library pathname.
@@ -17,7 +17,7 @@ LIBNAM= ../libcip.a
 #  List all the target objects.
 #
 $(LIBNAM): \
-	$(LIBNAM)(ciplib.o) 
+	$(LIBNAM)(ciplib.o)
 #
 #  Set index.
 #

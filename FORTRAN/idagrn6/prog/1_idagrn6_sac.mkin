@@ -9,13 +9,14 @@ SUBS= spheroidal5.f toroidal5.f spheroidal_exc5.f toroidal_exc5.f \
       dwdd_c51.f dwdd_db.f
 
 OBJS= $(PROG).o $(SUBS:.f=.o)
+FFLAGS = -mcmodel=medium
 
 .f.o:
 	$(FC) $(FFLAGS) -c $*.f
 
 #----------------------------------------------------------------------------------
 
-$(PROG): $(OBJS) 
+$(PROG): $(OBJS)
 	$(FC) $(FFLAGS) $(LFLAGS) -o $(MYBIN)/$@ $(OBJS) \
 	$(MYLIB)/libcip.a \
 	/opt/local/sac/lib/sacio.a \

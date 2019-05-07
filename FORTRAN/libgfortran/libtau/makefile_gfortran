@@ -1,6 +1,6 @@
-MLIB=../
+MYLIB=../
 OBJTAU = libtau.o libsun.o
-FFLAGS = -O3
+FFLAGS = -O3 -mcmodel=medium
 LFLAGS = -L$(MYLIB)
 LLIBS = -ltau
 ARFLAGS= rcv

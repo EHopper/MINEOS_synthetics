@@ -1,12 +1,12 @@
-FBIN = /Users/russell/Lamont/PROJ_LoveOvertones/FORTRAN/bin
+FBIN = /home/chiv/Documents/SurfaceWaves/MINEOS_synthetics/FORTRAN/bin
 FC = gfortran
-FFLAGS=-ffixed-line-length-none 
-#-L/usr/local/include 
+FFLAGS=-ffixed-line-length-none -mcmodel=medium
+#-L/usr/local/include
 #FFLAGS2=-march=x86_64
 
 all:  $(FBIN)/eigenST_asc
 
-.f.o: 
+.f.o:
 	$(FC) $(FFLAGS) $(FFLAGS2) -c $*.f
 
 #----------------------------------
@@ -14,5 +14,5 @@ all:  $(FBIN)/eigenST_asc
 $(FBIN)/eigenST_asc: eigenST_asc.f
 	$(FC) $(FFLAGS) -o $(FBIN)/eigenST_asc eigenST_asc.f
 
-clean: 
+clean:
 	rm -rf *.o $(FBIN)/eigenST_asc

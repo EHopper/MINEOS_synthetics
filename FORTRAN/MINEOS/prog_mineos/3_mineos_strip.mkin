@@ -1,6 +1,6 @@
 MYBIN = BINxreplace
 FC = FCxreplace
-FFLAGS=-ffixed-line-length-none
+FFLAGS=-ffixed-line-length-none -mcmodel=medium
 #
 PROG= mineos_strip
 SUBS=
@@ -11,7 +11,7 @@ OBJS= $(PROG).o $(SUBS:.f=.o)
 
 #----------------------------------------------------------------------------------
 
-$(PROG): $(OBJS) 
+$(PROG): $(OBJS)
 	$(FC) $(FFLAGS)  -o $(MYBIN)/$@ $(OBJS)
 
 # check object files for dependency on .h files
